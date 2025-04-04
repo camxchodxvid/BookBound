@@ -4,7 +4,9 @@
 
 ## Description
 
-CompanyCompass is a powerful command-line application that helps business owners and managers view and manage departments, roles, and employees in their company. This intuitive interface allows for organizing and planning business operations efficiently. Built with MySQL and Node.js, it provides a straightforward solution for tracking organizational structure, managing personnel data, and making informed decisions about team resources—all without the need for complex spreadsheets or expensive HR software.
+CompanyCompass is a powerful command-line application designed to help business owners and managers efficiently view and manage their organizational structure. This intuitive interface streamlines the process of organizing departments, roles, and employees, making business planning and resource allocation more effective.
+
+Built with MySQL and Node.js, CompanyCompass provides a robust solution for tracking organizational hierarchy, managing personnel data, and making data-driven decisions about team resources—all without the complexity of spreadsheets or the cost of enterprise HR software.
 
 ## Table of Contents
 
@@ -15,30 +17,30 @@ CompanyCompass is a powerful command-line application that helps business owners
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [License](#license)
-- [Questions](#questions)
+- [Contact](#contact)
 
 ## Installation
 
-To install and set up CompanyCompass on your local machine, follow these steps:
+To install and set up CompanyCompass on your local machine:
 
-1. Clone the repository to your local machine:
-   ```
+1. Clone the repository:
+   ```bash
    git clone https://github.com/camxchodxvid/CompanyCompass.git
    ```
 
 2. Navigate to the project directory:
-   ```
+   ```bash
    cd CompanyCompass
    ```
 
 3. Install the required dependencies:
-   ```
+   ```bash
    npm install
    ```
 
 4. Configure the database connection:
    - Open `db/connection.js`
-   - Modify the MySQL connection parameters with your credentials:
+   - Update the MySQL connection parameters with your credentials:
      ```javascript
      const connection = mysql.createConnection({
        host: 'localhost',
@@ -49,80 +51,78 @@ To install and set up CompanyCompass on your local machine, follow these steps:
      ```
 
 5. Set up the database schema and seed data:
-   - Start MySQL in your terminal:
-     ```
-     mysql -u root -p
-     ```
-   - Once logged in to MySQL, run:
-     ```
-     source db/schema.sql
-     source db/seeds.sql
-     ```
-   - Exit MySQL:
-     ```
-     exit
-     ```
+   ```bash
+   mysql -u root -p
+   source db/schema.sql
+   source db/seeds.sql
+   exit
+   ```
 
 ## Usage
 
-To start the application, run:
-```
+Launch the application with:
+```bash
 npm start
 ```
 
-The application will present you with a menu of options to:
+The interactive menu allows you to:
 - View all departments, roles, or employees
 - Add a department, role, or employee
-- Update an employee's role
+- Update employee roles and information
 
-Follow the on-screen prompts to navigate through the application.
+Simply follow the on-screen prompts to navigate through the available options.
 
 ## Features
 
-- **View Departments**: Display a formatted table showing department names and IDs
-- **View Roles**: Display job titles, role IDs, departments, and salaries
-- **View Employees**: Display employee data including IDs, names, job titles, departments, salaries, and managers
-- **Add Department**: Create a new department in the database
-- **Add Role**: Create a new role with title, salary, and department
-- **Add Employee**: Create a new employee record with name, role, and manager
-- **Update Employee Role**: Change an employee's job role
+- **Department Management**
+  - View all departments with formatted tables showing names and IDs
+  - Add new departments to the organization
+
+- **Role Management**
+  - View all roles with details including titles, IDs, departments, and salaries
+  - Create new roles with customizable titles, salaries, and department assignments
+
+- **Employee Management**
+  - View comprehensive employee data including IDs, names, titles, departments, salaries, and reporting structure
+  - Add new employees with full profile information
+  - Update employee roles as organizational needs change
 
 ## Database Schema
 
-The application uses a MySQL database with the following structure:
+The application is built on a relational MySQL database with the following structure:
 
-- **department**
-  - id: INT PRIMARY KEY
-  - name: VARCHAR(30)
+**department**
+  - `id`: INT PRIMARY KEY
+  - `name`: VARCHAR(30)
 
-- **role**
-  - id: INT PRIMARY KEY
-  - title: VARCHAR(30)
-  - salary: DECIMAL
-  - department_id: INT (Foreign Key to department.id)
+**role**
+  - `id`: INT PRIMARY KEY
+  - `title`: VARCHAR(30)
+  - `salary`: DECIMAL
+  - `department_id`: INT (Foreign Key to department.id)
 
-- **employee**
-  - id: INT PRIMARY KEY
-  - first_name: VARCHAR(30)
-  - last_name: VARCHAR(30)
-  - role_id: INT (Foreign Key to role.id)
-  - manager_id: INT (Foreign Key to employee.id, self-referencing)
-
+**employee**
+  - `id`: INT PRIMARY KEY
+  - `first_name`: VARCHAR(30)
+  - `last_name`: VARCHAR(30)
+  - `role_id`: INT (Foreign Key to role.id)
+  - `manager_id`: INT (Foreign Key to employee.id, self-referencing)
 
 ## Technologies Used
 
-- Node.js
-- Inquirer.js (for command-line prompts)
-- MySQL2 (for database operations)
-- console.table (for formatted table output)
-- JavaScript ES6+
+- **Node.js** - JavaScript runtime environment
+- **Inquirer.js** - Interactive command-line interface
+- **MySQL2** - Database operations and management
+- **console.table** - Formatted data presentation
+- **JavaScript ES6+** - Modern programming features
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Questions
+## Contact
 
-If you have any questions or issues, please contact:
+If you have any questions, suggestions, or issues, please reach out:
 
-GitHub: [camxchodxvid](https://github.com/camxchodxvid)
+- GitHub: [camxchodxvid](https://github.com/camxchodxvid)
+- Email: dxvid2001@gmail.com
